@@ -9,6 +9,7 @@
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="GraphQLExecutor.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,34 @@
+name: .NET Conformance
+
+on:
+  pull_request:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dotnet-conformance-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  dotnet-conformance:
+    name: graphql-dotnet conformance
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Run conformance tests
+        run: >
+          dotnet test
+          impls/graphql-dotnet/ConformerTests/ConformerTests.csproj
+          --logger "console;verbosity=minimal"
