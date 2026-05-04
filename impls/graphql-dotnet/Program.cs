@@ -68,7 +68,12 @@ static async Task<string> ExecuteAsync(ExecuteRequest payload)
         .Distinct(StringComparer.Ordinal)
         .ToArray();
 
-    var schema = Schema.For(schemaText, sb =>
+    // graphql-dotnet incorrectly rejects schemas where an input type field's type is the
+    // same input type and has a terminating default value, treating it as a circular
+    // dependency loop. Strip those defaults before schema building to work around this.
+    var buildSchemaText = StripSelfReferencingInputDefaults(schemaText, document);
+
+    var schema = Schema.For(buildSchemaText, sb =>
     {
         foreach (var objectTypeName in abstractPossibleTypes)
         {
@@ -188,6 +193,54 @@ static object? ResolveValue(IGraphType type, IReadOnlyDictionary<string, List<st
         ScalarGraphType => "str",
         _ => null,
     };
+}
+
+// Returns the base named type for any GraphQL type (unwraps List and NonNull wrappers).
+static string GetBaseTypeName(GraphQLType type) =>
+    type switch
+    {
+        GraphQLNamedType named => named.Name.StringValue,
+        GraphQLListType list => GetBaseTypeName(list.Type),
+        GraphQLNonNullType nonNull => GetBaseTypeName(nonNull.Type),
+        _ => string.Empty,
+    };
+
+// graphql-dotnet throws "circular dependency loop" for input types that have a field
+// whose type is the same input type, even when the default value terminates with null.
+// Strip those self-referencing default values so schema building succeeds.
+static string StripSelfReferencingInputDefaults(string schemaText, GraphQLDocument document)
+{
+    var removalRanges = new List<(int start, int end)>();
+
+    foreach (var def in document.Definitions.OfType<GraphQLInputObjectTypeDefinition>())
+    {
+        var typeName = def.Name.StringValue;
+        if (def.Fields == null) continue;
+
+        foreach (var field in def.Fields.Items)
+        {
+            if (field.DefaultValue == null) continue;
+            if (!string.Equals(GetBaseTypeName(field.Type), typeName, StringComparison.Ordinal)) continue;
+
+            // Find the '=' sign that precedes the default value in the source text
+            // and include it in the range to remove.
+            var defStart = field.DefaultValue.Location.Start;
+            var defEnd = field.DefaultValue.Location.End;
+            var pos = defStart - 1;
+            while (pos >= 0 && (schemaText[pos] == ' ' || schemaText[pos] == '\t')) pos--;
+            if (pos >= 0 && schemaText[pos] == '=')
+                removalRanges.Add((pos, defEnd));
+        }
+    }
+
+    if (removalRanges.Count == 0) return schemaText;
+
+    // Remove in reverse order to preserve earlier character positions.
+    removalRanges.Sort((a, b) => b.start.CompareTo(a.start));
+    var sb = new System.Text.StringBuilder(schemaText);
+    foreach (var (start, end) in removalRanges)
+        sb.Remove(start, end - start);
+    return sb.ToString();
 }
 
 static JsonSerializerOptions GetJsonOpts() => new(JsonSerializerDefaults.Web);
