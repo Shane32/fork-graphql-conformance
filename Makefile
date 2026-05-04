@@ -70,7 +70,7 @@ DOCKER_ENV := \
 # non-pass outcomes in a single run. Overridable per invocation (e.g. `make
 # run-conformer CONFORMER_MAX_IMPL_FAILURES=25`); `=0` disables fallout.
 # Exported so `docker run -e CONFORMER_MAX_IMPL_FAILURES` above inherits it.
-CONFORMER_MAX_IMPL_FAILURES ?= 10
+CONFORMER_MAX_IMPL_FAILURES ?= 0
 export CONFORMER_MAX_IMPL_FAILURES
 
 # --init runs tini as PID 1 inside the container, which forwards
