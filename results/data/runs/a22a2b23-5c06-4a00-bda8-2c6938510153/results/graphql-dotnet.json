@@ -1,0 +1,196 @@
+[
+  {
+    "id": "91f54a92-e5d2-4a67-8ce0-b77f29f2fd1c",
+    "runId": "a22a2b23-5c06-4a00-bda8-2c6938510153",
+    "implId": "graphql-dotnet",
+    "testCaseId": "0565cafd/428c233b/44136fa3",
+    "status": "error",
+    "expected": {
+      "data": {
+        "jrWn": true
+      }
+    },
+    "error": "The default value of Input Object type field 'Input_pQSaVr76.fKKsKNm' is invalid.",
+    "stderr": "{\"errors\":[{\"message\":\"The default value of Input Object type field \\u0027Input_pQSaVr76.fKKsKNm\\u0027 is invalid.\"}]}"
+  },
+  {
+    "id": "30d73110-4990-4893-84bc-087c2284a4db",
+    "runId": "a22a2b23-5c06-4a00-bda8-2c6938510153",
+    "implId": "graphql-dotnet",
+    "testCaseId": "0565cafd/4cfeef10/44136fa3",
+    "status": "error",
+    "expected": {
+      "data": {
+        "__typename": "Object_bd",
+        "XTh": "Object_bd"
+      }
+    },
+    "error": "The default value of Input Object type field 'Input_pQSaVr76.fKKsKNm' is invalid.",
+    "stderr": "{\"errors\":[{\"message\":\"The default value of Input Object type field \\u0027Input_pQSaVr76.fKKsKNm\\u0027 is invalid.\"}]}"
+  },
+  {
+    "id": "6ad75088-57ad-4343-8975-0a7b20f29461",
+    "runId": "a22a2b23-5c06-4a00-bda8-2c6938510153",
+    "implId": "graphql-dotnet",
+    "testCaseId": "0565cafd/6f196a73/44136fa3",
+    "status": "error",
+    "expected": {
+      "data": {
+        "__typename": "Object_bd"
+      }
+    },
+    "error": "The default value of Input Object type field 'Input_pQSaVr76.fKKsKNm' is invalid.",
+    "stderr": "{\"errors\":[{\"message\":\"The default value of Input Object type field \\u0027Input_pQSaVr76.fKKsKNm\\u0027 is invalid.\"}]}"
+  },
+  {
+    "id": "3d9c805b-af31-4f7a-824e-95a9ba3a8de6",
+    "runId": "a22a2b23-5c06-4a00-bda8-2c6938510153",
+    "implId": "graphql-dotnet",
+    "testCaseId": "0565cafd/8a20c5f6/44136fa3",
+    "status": "error",
+    "expected": {
+      "data": {
+        "HQxxb9z": [
+          {
+            "f8": [
+              true,
+              true
+            ]
+          },
+          {
+            "f8": [
+              true,
+              true
+            ]
+          }
+        ],
+        "J518": [
+          {
+            "__typename": "Interface_U61e_STUB"
+          },
+          {
+            "__typename": "Interface_U61e_STUB"
+          }
+        ],
+        "__typename": "Object_bd"
+      }
+    },
+    "error": "The default value of Input Object type field 'Input_pQSaVr76.fKKsKNm' is invalid.",
+    "stderr": "{\"errors\":[{\"message\":\"The default value of Input Object type field \\u0027Input_pQSaVr76.fKKsKNm\\u0027 is invalid.\"}]}"
+  },
+  {
+    "id": "84fb2c58-d650-4cf5-8f20-b3415418c2bb",
+    "runId": "a22a2b23-5c06-4a00-bda8-2c6938510153",
+    "implId": "graphql-dotnet",
+    "testCaseId": "0565cafd/9f5bb655/44136fa3",
+    "status": "error",
+    "expected": {
+      "data": {
+        "cDAO089m0": "Object_bd"
+      }
+    },
+    "error": "The default value of Input Object type field 'Input_pQSaVr76.fKKsKNm' is invalid.",
+    "stderr": "{\"errors\":[{\"message\":\"The default value of Input Object type field \\u0027Input_pQSaVr76.fKKsKNm\\u0027 is invalid.\"}]}"
+  },
+  {
+    "id": "489e3d77-4931-433b-8a8f-678912d69dae",
+    "runId": "a22a2b23-5c06-4a00-bda8-2c6938510153",
+    "implId": "graphql-dotnet",
+    "testCaseId": "0565cafd/cd9f770b/44136fa3",
+    "status": "error",
+    "expected": {
+      "data": {
+        "__typename": "Object_bd",
+        "NaTj": "Object_bd"
+      }
+    },
+    "error": "The default value of Input Object type field 'Input_pQSaVr76.fKKsKNm' is invalid.",
+    "stderr": "{\"errors\":[{\"message\":\"The default value of Input Object type field \\u0027Input_pQSaVr76.fKKsKNm\\u0027 is invalid.\"}]}"
+  },
+  {
+    "id": "be70cdb5-77ea-4523-83fc-9626bf197894",
+    "runId": "a22a2b23-5c06-4a00-bda8-2c6938510153",
+    "implId": "graphql-dotnet",
+    "testCaseId": "0565cafd/dce9e68f/44136fa3",
+    "status": "error",
+    "expected": {
+      "data": {
+        "__typename": "Object_bd"
+      }
+    },
+    "error": "The default value of Input Object type field 'Input_pQSaVr76.fKKsKNm' is invalid.",
+    "stderr": "{\"errors\":[{\"message\":\"The default value of Input Object type field \\u0027Input_pQSaVr76.fKKsKNm\\u0027 is invalid.\"}]}"
+  },
+  {
+    "id": "1f242799-a878-4032-8499-214f753451a0",
+    "runId": "a22a2b23-5c06-4a00-bda8-2c6938510153",
+    "implId": "graphql-dotnet",
+    "testCaseId": "0565cafd/e841846b/44136fa3",
+    "status": "error",
+    "expected": {
+      "data": {
+        "__typename": "Object_bd",
+        "j": [
+          {
+            "__typename": "Interface_U61e_STUB"
+          },
+          {
+            "__typename": "Interface_U61e_STUB"
+          }
+        ],
+        "jrWn": true,
+        "ikBVofJQ": true
+      }
+    },
+    "error": "The default value of Input Object type field 'Input_pQSaVr76.fKKsKNm' is invalid.",
+    "stderr": "{\"errors\":[{\"message\":\"The default value of Input Object type field \\u0027Input_pQSaVr76.fKKsKNm\\u0027 is invalid.\"}]}"
+  },
+  {
+    "id": "1d661f13-bec7-446d-8be2-0d4ca6fc3791",
+    "runId": "a22a2b23-5c06-4a00-bda8-2c6938510153",
+    "implId": "graphql-dotnet",
+    "testCaseId": "0565cafd/e841846b/6dfb7769",
+    "status": "error",
+    "expected": {
+      "data": {
+        "__typename": "Object_bd",
+        "j": [
+          {
+            "__typename": "Interface_U61e_STUB"
+          },
+          {
+            "__typename": "Interface_U61e_STUB"
+          }
+        ],
+        "jrWn": true,
+        "ikBVofJQ": true
+      }
+    },
+    "error": "The default value of Input Object type field 'Input_pQSaVr76.fKKsKNm' is invalid.",
+    "stderr": "{\"errors\":[{\"message\":\"The default value of Input Object type field \\u0027Input_pQSaVr76.fKKsKNm\\u0027 is invalid.\"}]}"
+  },
+  {
+    "id": "ef50d5bb-edc7-4ad9-8d60-6cbfb9f53804",
+    "runId": "a22a2b23-5c06-4a00-bda8-2c6938510153",
+    "implId": "graphql-dotnet",
+    "testCaseId": "0565cafd/e841846b/852980e1",
+    "status": "error",
+    "expected": {
+      "data": {
+        "__typename": "Object_bd",
+        "j": [
+          {
+            "__typename": "Interface_U61e_STUB"
+          },
+          {
+            "__typename": "Interface_U61e_STUB"
+          }
+        ],
+        "jrWn": true,
+        "ikBVofJQ": true
+      }
+    },
+    "error": "The default value of Input Object type field 'Input_pQSaVr76.fKKsKNm' is invalid.",
+    "stderr": "{\"errors\":[{\"message\":\"The default value of Input Object type field \\u0027Input_pQSaVr76.fKKsKNm\\u0027 is invalid.\"}]}"
+  }
+]
